@@ -790,12 +790,9 @@ require('lazy').setup({
   --     vim.cmd.hi 'Comment gui=none'
   --   end,
   -- },
-  {'https://github.com/aditya-azad/candle-grey',
-    priority = 1000,
-    init = function()
-      vim.cmd.colorscheme 'candle-grey'
-      vim.cmd.hi 'Comment gui=none'
-    end,
+  {
+    'https://github.com/pbrisbin/vim-colors-off',
+      priority = 10000,
   },
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
@@ -818,12 +815,12 @@ require('lazy').setup({
       -- - sr)'  - [S]urround [R]eplace [)] [']
       require('mini.surround').setup {
         mappings = {
-          add = 'ga',            -- Add surrounding in Normal and Visual modes
-          delete = 'gd',         -- Delete surrounding
-          find = 'gf',           -- Find surrounding (to the right)
-          find_left = 'gF',      -- Find surrounding (to the left)
+          add = 'gs',            -- Add surrounding in Normal and Visual modes
+          delete = 'ds',         -- Delete surrounding
+          find = 'fs',           -- Find surrounding (to the right)
+          find_left = 'Fs',      -- Find surrounding (to the left)
           highlight = 'gh',      -- Highlight surrounding
-          replace = 'gc',        -- Replace surrounding
+          replace = 'ca',        -- Replace surrounding
           update_n_lines = 'gn', -- Update `n_lines`
 
           suffix_last = 'l',     -- Suffix to search with "prev" method
