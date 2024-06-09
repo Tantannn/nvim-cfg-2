@@ -793,7 +793,7 @@ require('lazy').setup({
   {'https://github.com/aditya-azad/candle-grey',
     priority = 1000,
     init = function()
-      vim.cmd.colorscheme 'candle-grey-transparent'
+      vim.cmd.colorscheme 'candle-grey'
       vim.cmd.hi 'Comment gui=none'
     end,
   },
