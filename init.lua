@@ -575,7 +575,7 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
-        -- tsserver = {},
+        tsserver = {},
         --
 
         lua_ls = {
@@ -682,12 +682,16 @@ require('lazy').setup({
           -- `friendly-snippets` contains a variety of premade snippets.
           --    See the README about individual language/framework/plugin snippets:
           --    https://github.com/rafamadriz/friendly-snippets
-          -- {
-          --   'rafamadriz/friendly-snippets',
-          --   config = function()
-          --     require('luasnip.loaders.from_vscode').lazy_load()
-          --   end,
-          -- },
+          {
+            'rafamadriz/friendly-snippets',
+            config = function()
+              require('luasnip.loaders.from_vscode').lazy_load()
+              -- React snippet
+              require('luasnip').filetype_extend("javascript", { "javascriptreact" })
+              require('luasnip').filetype_extend("javascript", { "typescriptreact" })
+              require('luasnip').filetype_extend("javascript", { "html" })
+            end,
+          },
         },
       },
       'saadparwaiz1/cmp_luasnip',
@@ -905,7 +909,6 @@ require('lazy').setup({
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
   { import = 'custom.plugins' },
-
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the

@@ -2,6 +2,7 @@
 --  I promise not to create any merge conflicts in this directory :)
 --
 -- Se the kickstart.nvim README for more information
+
 return {
   { 'xiyaowong/transparent.nvim' },
   -- lightspeed search
