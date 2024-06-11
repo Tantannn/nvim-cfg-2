@@ -798,6 +798,9 @@ require('lazy').setup({
   {
     'https://github.com/pbrisbin/vim-colors-off',
       priority = 10000,
+    init = function()
+      vim.cmd.colorscheme 'off'
+    end
   },
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
@@ -813,6 +816,8 @@ require('lazy').setup({
       --  - ci'  - [C]hange [I]nside [']quote
       require('mini.ai').setup { n_lines = 500 }
       require('mini.tabline').setup()
+      require('mini.bufremove').setup()
+      require('mini.bracketed').setup()
       -- Add/delete/replace surroundings (brackets, quotes, etc.)
       --
       -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
