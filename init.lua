@@ -797,7 +797,7 @@ require('lazy').setup({
   -- },
   {
     'https://github.com/pbrisbin/vim-colors-off',
-      priority = 10000,
+    priority = 10000,
     init = function()
       vim.cmd.colorscheme 'off'
     end
@@ -825,16 +825,16 @@ require('lazy').setup({
       -- - sr)'  - [S]urround [R]eplace [)] [']
       require('mini.surround').setup {
         mappings = {
-          add = 'gs',            -- Add surrounding in Normal and Visual modes
-          delete = 'ds',         -- Delete surrounding
-          find = 'fs',           -- Find surrounding (to the right)
-          find_left = 'Fs',      -- Find surrounding (to the left)
-          highlight = 'gh',      -- Highlight surrounding
-          replace = 'ca',        -- Replace surrounding
-          update_n_lines = 'gn', -- Update `n_lines`
+          add = 'gs',               -- Add surrounding in Normal and Visual modes
+          delete = 'ds',            -- Delete surrounding
+          find = '<leader>ts',      -- Find surrounding (to the right)
+          find_left = '<leader>Ts', -- Find surrounding (to the left)
+          highlight = 'gh',         -- Highlight surrounding
+          replace = 'ca',           -- Replace surrounding
+          update_n_lines = 'gn',    -- Update `n_lines`
 
-          suffix_last = 'l',     -- Suffix to search with "prev" method
-          suffix_next = 'n',     -- Suffix to search with "next" method
+          suffix_last = 'l',        -- Suffix to search with "prev" method
+          suffix_next = 'n',        -- Suffix to search with "next" method
         }
       }
 

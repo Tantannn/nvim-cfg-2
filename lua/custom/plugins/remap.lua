@@ -20,7 +20,7 @@ vim.keymap.set("n", "Y", "y$")
 vim.keymap.set("i", "<C-b>", "<Esc>^i", {desc= "Beginning of line" })
 vim.keymap.set("i", "<C-e>", "<End>", {desc= "End of line" })
 
-vim.keymap.set("n", "<C-n>", "*Ncgn", { silent = true, desc = "Substitute word under cursor" })
+-- vim.keymap.set("n", "<C-n>", "*Ncgn", { silent = true, desc = "Substitute word under cursor" })
 -- Resize with arrows
 -- vim.keymap.set('n', '<C-Up>', ':resize -2<CR>', {desc = "Resize window up"});
 -- vim.keymap.set('n', '<C-Down>', ':resize +2<CR>', {desc = "Resize window down"});
