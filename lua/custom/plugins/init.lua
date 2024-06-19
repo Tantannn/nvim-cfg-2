@@ -22,10 +22,16 @@ return {
   },
   -- css color
   {'NvChad/nvim-colorizer.lua'},
-  -- fugitive
+  -- git
   {'https://github.com/tpope/vim-fugitive'},
+  {'sodapopcan/vim-twiggy'},
+  {'junegunn/gv.vim'},
     --switch true/false
   {'andrewradev/switch.vim'},
+  --   opts = {
+  --     vim.keymap.set("n", ":Switch<CR>", "-"),
+  --   }
+  -- },
   --persistance
   {
     "folke/persistence.nvim",
@@ -35,7 +41,7 @@ return {
     },
   },
   --terminal
-  {'akinsho/toggleterm.nvim'},
+  -- {'akinsho/toggleterm.nvim'},
   -- undo tree
   {'mbbill/undotree',
     config = function ()
@@ -53,6 +59,8 @@ return {
       })
     end,
   },
+  -- close tag
+  -- {'alvan/vim-closetag'},
     -- Swap
   -- {'mizlan/iswap.nvim'},
 }
