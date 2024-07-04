@@ -30,7 +30,7 @@ return {
   {'https://github.com/tpope/vim-fugitive'},
   {'sodapopcan/vim-twiggy'},
   {'junegunn/gv.vim'},
-  {'tpope/vim-rhubarb'},
+  -- {'tpope/vim-rhubarb'},
     --switch true/false
   {'andrewradev/switch.vim'},
   --   opts = {
@@ -64,6 +64,8 @@ return {
       })
     end,
   },
+  -- multi line 
+  {'mg979/vim-visual-multi'},
   -- close tag
   -- {'alvan/vim-closetag'},
     -- Swap
