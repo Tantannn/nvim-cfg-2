@@ -68,6 +68,12 @@ return {
   {'mg979/vim-visual-multi'},
   -- close tag
   -- {'alvan/vim-closetag'},
+  {
+    'windwp/nvim-ts-autotag',
+    config = function()
+      require('nvim-ts-autotag').setup()
+    end
+  },
     -- Swap
   -- {'mizlan/iswap.nvim'},
 }
