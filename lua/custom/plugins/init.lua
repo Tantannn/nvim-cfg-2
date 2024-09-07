@@ -24,8 +24,6 @@ return {
       })
     end
   },
-  -- css color
-  {'NvChad/nvim-colorizer.lua'},
   -- git
   {'https://github.com/tpope/vim-fugitive'},
   {'sodapopcan/vim-twiggy'},
