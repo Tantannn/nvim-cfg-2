@@ -19,6 +19,7 @@ vim.keymap.set("i", "<C-BS>", "<Esc>cvb",{desc = 'Delete a word'})
 vim.keymap.set("n", "Y", "y$")
 vim.keymap.set("i", "<C-b>", "<Esc>^i", {desc= "Beginning of line" })
 vim.keymap.set("i", "<C-e>", "<End>", {desc= "End of line" })
+vim.keymap.set("n", "<leader>cb", "<CMD>bd<CR>", { desc = "Close buffer" })
 
 -- vim.keymap.set("n", "<C-n>", "*Ncgn", { silent = true, desc = "Substitute word under cursor" })
 -- Resize with arrows
@@ -50,6 +51,7 @@ vim.keymap.set("i", "<C-j>", "<Down>", {desc= "Move down" })
 -- vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]], opts)
 -- vim.keymap.set('t', '<C-w>', [[<C-\><C-n><C-w>]], opts)
 -- }
+--
 
 return {
 
