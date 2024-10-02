@@ -20,7 +20,9 @@ return {
         condition = function(buf)
           local fn = vim.fn
           local utils = require("auto-save.utils.data")
-
+          if vim.bo[buf].filetype == "harpoon" then
+            return false
+          end
           if
             fn.getbufvar(buf, "&modifiable") == 1 and
             utils.not_in(fn.getbufvar(buf, "&filetype"), {}) then
@@ -39,6 +41,6 @@ return {
         }
 
       }
-    end,
+    end,  
   },
 }
