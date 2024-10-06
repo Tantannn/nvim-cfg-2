@@ -45,8 +45,8 @@ return {
             {"<a-6>", function() harpoon:list():prev() end, desc ="Harpoon prev buffer"},
       
             -- Harpoon user interface.
-            {"<leader>h", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, desc ="Harpoon Toggle Menu"},
-            {"<leader>a", function() harpoon:list():add() end, desc ="Harpoon add file"},
+            {"<leader>qh", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, desc ="Harpoon Toggle Menu"},
+            {"<leader>qa", function() harpoon:list():add() end, desc ="Harpoon add file"},
       
             -- Use Telescope as Harpoon user interface.
             {"<leader>9", function() toggle_telescope(harpoon:list() )end, desc ="Open Harpoon window"},
