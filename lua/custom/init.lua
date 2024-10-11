@@ -8,10 +8,15 @@ return {
   -- lightspeed search
   {'ggandor/lightspeed.nvim'},
   -- git
-  {'https://github.com/tpope/vim-fugitive'},
+  {'https://github.com/tpope/vim-fugitive',
+    config = function()
+      vim.keymap.set("n", "g<cr>", "<cmd>vertical Git<cr>")
+      vim.keymap.set("n", "g<space>", ":Git ")
+    end,
+  },
   {'sodapopcan/vim-twiggy'},
   {'junegunn/gv.vim'},
-  -- {'tpope/vim-rhubarb'},
+  {'tpope/vim-rhubarb'},
     --switch true/false
   {'andrewradev/switch.vim',
     vim.keymap.set("n", "gs", "<cmd>Switch<CR>" , { silent = true, desc = 'Switch True/False' })
@@ -52,4 +57,16 @@ return {
   },
     -- Swap
   -- {'mizlan/iswap.nvim'},
+  -- {'Hoffs/omnisharp-extended-lsp.nvim',
+  --   config = function()
+  --     require'lspconfig'.omnisharp.setup({
+  --       handlers = {
+  --         ["textDocument/definition"] = require('omnisharp_extended').definition_handler,
+  --         ["textDocument/typeDefinition"] = require('omnisharp_extended').type_definition_handler,
+  --         ["textDocument/references"] = require('omnisharp_extended').references_handler,
+  --         ["textDocument/implementation"] = require('omnisharp_extended').implementation_handler,
+  --       },
+  --     })
+  --   end
+  -- },
 }
