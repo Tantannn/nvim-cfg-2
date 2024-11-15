@@ -56,8 +56,8 @@ return {
         map('n', '<leader>tb', gitsigns.toggle_current_line_blame, { desc = '[T]oggle git show [b]lame line' })
         map('n', '<leader>tD', gitsigns.toggle_deleted, { desc = '[T]oggle git show [D]eleted' })
 
-        vim.cmd('highlight GitSignsAdd guifg=Green')
-        vim.cmd('highlight GitSignsDelete guifg=Red')
+        vim.api.nvim_set_hl(0, "GitSignsAdd", {fg = "#51F542"})
+        vim.api.nvim_set_hl(0, "GitSignsDelete", {fg = "#F54242"})
       end,
     },
   },
