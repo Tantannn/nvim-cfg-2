@@ -58,6 +58,7 @@ return {
 
         vim.api.nvim_set_hl(0, "GitSignsAdd", {fg = "#51F542"})
         vim.api.nvim_set_hl(0, "GitSignsDelete", {fg = "#F54242"})
+        vim.api.nvim_set_hl(0, "GitSignsChange", {fg = "#FFFF00"})
       end,
     },
   },
