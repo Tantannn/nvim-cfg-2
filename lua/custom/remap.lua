@@ -25,10 +25,10 @@ vim.keymap.set("n", "<leader>ct", "<CMD>tabnew<CR>", { desc = "Create tab" })
 
 -- vim.keymap.set("n", "<C-n>", "*Ncgn", { silent = true, desc = "Substitute word under cursor" })
 -- Resize with arrows
--- vim.keymap.set('n', '<C-Up>', ':resize -2<CR>', {desc = "Resize window up"});
--- vim.keymap.set('n', '<C-Down>', ':resize +2<CR>', {desc = "Resize window down"});
--- vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>', {desc = "Resize window right"});
--- vim.keymap.set('n', '<C-Left>', ':vertical resize -2<CR>', {desc = "Resize window left"});
+vim.keymap.set('n', '<C-Up>', ':resize -2<CR>', {desc = "Resize window up"});
+vim.keymap.set('n', '<C-Down>', ':resize +2<CR>', {desc = "Resize window down"});
+vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>', {desc = "Resize window right"});
+vim.keymap.set('n', '<C-Left>', ':vertical resize -2<CR>', {desc = "Resize window left"});
 
 -- navigate within insert mode
 vim.keymap.set("i", "<C-h>", "<Left>", {desc= "Move left" })
@@ -37,8 +37,8 @@ vim.keymap.set("i", "<C-l>", "<Right>", {desc= "Move right" })
 vim.keymap.set("i", "<C-j>", "<Down>", {desc= "Move down" })
 --
 -- Use <Tab> to cycle through buffers in tab
--- vim.keymap.set('n', '<Tab>', '<C-W>w');
--- vim.keymap.set('n', '<S-Tab>', '<C-W>W');
+vim.keymap.set('n', '<Tab>', '<C-W>w');
+vim.keymap.set('n', '<S-Tab>', '<C-W>W');
 --
 -- -- Toggle Term
 -- nnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>

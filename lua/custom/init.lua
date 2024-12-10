@@ -5,9 +5,16 @@
 
 return {
   { 'xiyaowong/transparent.nvim' },
-  -- lightspeed search
-  {'ggandor/lightspeed.nvim'},
-  -- git
+  -- leap search
+  {
+    'ggandor/leap.nvim',
+    config = function()
+      require('leap').create_default_mappings()
+      vim.keymap.set({ 'n', 'x', 'o' }, 's', '<Plug>(leap-forward)')
+      vim.keymap.set({ 'n', 'x', 'o' }, 'S', '<Plug>(leap-backward)')
+      vim.keymap.set({ 'n', 'x', 'o' }, 'gs', '<Plug>(leap-from-window)')
+    end
+  },  -- git
   {'https://github.com/tpope/vim-fugitive',
     config = function()
       vim.keymap.set("n", "g<cr>", "<cmd>vertical Git<cr>")
