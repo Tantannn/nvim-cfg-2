@@ -21,6 +21,7 @@ vim.keymap.set("i", "<C-b>", "<Esc>^i", {desc= "Beginning of line" })
 vim.keymap.set("i", "<C-e>", "<End>", {desc= "End of line" })
 
 vim.keymap.set("n", "<A-c>", "<CMD>bd<CR>", { desc = "Close buffer" })
+vim.keymap.set("n", "<A-t>", "<CMD>tabclose<CR>", { desc = "Close buffer" })
 vim.keymap.set("n", "<leader>ct", "<CMD>tabnew<CR>", { desc = "Create tab" })
 
 -- vim.keymap.set("n", "<C-n>", "*Ncgn", { silent = true, desc = "Substitute word under cursor" })
