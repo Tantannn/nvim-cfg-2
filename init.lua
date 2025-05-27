@@ -577,7 +577,6 @@ require('lazy').setup({
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
         tsserver = {},
-        
         omnisharp = {
           capabilities = capabilities,
           enable_roslyn_analysers = true,
@@ -653,9 +652,9 @@ require('lazy').setup({
       --   -- Disable "format_on_save lsp_fallback" for languages that don't
       --   -- have a well standardized coding style. You can add additional
       --   -- languages here or re-enable it for the disabled ones.
-      --   local disable_filetypes = { c = true, cpp = true, lua = true }
+      --   local disable_filetypes = { c = true, cpp = true, lua = true, tsx = true, ts = true }
       --   return {
-      --     timeout_ms = 500,
+      --     timeout_ms = 2000,
       --     lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
       --   }
       -- end,
@@ -793,20 +792,20 @@ require('lazy').setup({
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
     'folke/tokyonight.nvim',
-    -- priority = 1000, -- Make sure to load this before all the other start plugins.
+    priority = 1000, -- Make sure to load this before all the other start plugins.
     init = function()
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      -- vim.cmd.colorscheme 'tokyonight-night'
-  
+      vim.cmd.colorscheme 'tokyonight-night'
+
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
     end,
   },
   {
     'https://github.com/pbrisbin/vim-colors-off',
-    priority = 10000,
+    -- priority = 10000,
     init = function()
       vim.cmd.colorscheme 'elflord'
       vim.cmd.colorscheme 'off'
@@ -828,6 +827,7 @@ require('lazy').setup({
       require('mini.tabline').setup()
       require('mini.bufremove').setup()
       require('mini.bracketed').setup()
+      require('mini.map').setup()
       -- Add/delete/replace surroundings (brackets, quotes, etc.)
       --
       -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
@@ -847,7 +847,25 @@ require('lazy').setup({
           suffix_next = 'n',        -- Suffix to search with "next" method
         },
       }
+      -- TODO: update mini map
+      -- require('mini.map').setup {
+      --   mappings = {
+      --     add = 'gs',               -- Add surrounding in Normal and Visual modes
+      --     delete = 'ds',            -- Delete surrounding
+      --     find = '<leader>ts',      -- Find surrounding (to the right)
+      --     find_left = '<leader>Ts', -- Find surrounding (to the left)
+      --     highlight = 'gh',         -- Highlight surrounding
+      --     replace = 'cs',           -- Replace surrounding
+      --     update_n_lines = 'gn',    -- Update `n_lines`
 
+      --     suffix_last = 'l',        -- Suffix to search with "prev" method
+      --     suffix_next = 'n',        -- Suffix to search with "next" method
+      --   },
+      -- }
+      -- vim.keymap.set('n', '<Leader>mc', Minimap.close)
+      -- vim.keymap.set('n', '<Leader>mf', Minimap.toggle_focus)
+      -- vim.keymap.set('n', '<Leader>mo', Minimap.open)
+      -- vim.keymap.set('n', '<Leader>mr', Minimap.refresh)
       -- Simple and easy statusline.
       --  You could remove this setup call if you don't like it,
       --  and try some other statusline plugin

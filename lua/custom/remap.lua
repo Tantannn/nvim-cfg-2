@@ -4,21 +4,21 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set("x", "<leader>p", [["_dP]])
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
-vim.keymap.set("n", "<leader>qc", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],{ desc = 'Change all word' } )
+vim.keymap.set("n", "<leader>qc", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'Change all word' })
 --
 vim.keymap.set("n", "<leader>o", "o<Esc>")
 vim.keymap.set("n", "<leader>O", "O<Esc>")
-vim.keymap.set("n", "<BS>", "ciw", {desc = 'Delete a word'})
-vim.keymap.set("i", "<C-BS>", "<Esc>cvb",{desc = 'Delete a word'})
+vim.keymap.set("n", "<BS>", "ciw", { desc = 'Delete a word' })
+vim.keymap.set("i", "<C-BS>", "<Esc>cvb", { desc = 'Delete a word' })
 -- vim.keymap.set("i", "<C-H>", "<Esc>cvb",{desc = 'Delete a word'})
 vim.keymap.set("n", "Y", "y$")
-vim.keymap.set("i", "<C-b>", "<Esc>^i", {desc= "Beginning of line" })
-vim.keymap.set("i", "<C-e>", "<End>", {desc= "End of line" })
+vim.keymap.set("i", "<C-b>", "<Esc>^i", { desc = "Beginning of line" })
+vim.keymap.set("i", "<C-e>", "<End>", { desc = "End of line" })
 
 vim.keymap.set("n", "<A-c>", "<CMD>bd<CR>", { desc = "Close buffer" })
 vim.keymap.set("n", "<A-t>", "<CMD>tabclose<CR>", { desc = "Close buffer" })
@@ -26,16 +26,16 @@ vim.keymap.set("n", "<leader>ct", "<CMD>tabnew<CR>", { desc = "Create tab" })
 
 -- vim.keymap.set("n", "<C-n>", "*Ncgn", { silent = true, desc = "Substitute word under cursor" })
 -- Resize with arrows
-vim.keymap.set('n', '<C-Up>', ':resize -2<CR>', {desc = "Resize window up"});
-vim.keymap.set('n', '<C-Down>', ':resize +2<CR>', {desc = "Resize window down"});
-vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>', {desc = "Resize window right"});
-vim.keymap.set('n', '<C-Left>', ':vertical resize -2<CR>', {desc = "Resize window left"});
+vim.keymap.set('n', '<C-Up>', ':resize -2<CR>', { desc = "Resize window up" });
+vim.keymap.set('n', '<C-Down>', ':resize +2<CR>', { desc = "Resize window down" });
+vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>', { desc = "Resize window right" });
+vim.keymap.set('n', '<C-Left>', ':vertical resize -2<CR>', { desc = "Resize window left" });
 
 -- navigate within insert mode
-vim.keymap.set("i", "<C-h>", "<Left>", {desc= "Move left" })
-vim.keymap.set("i", "<C-k>", "<Up>", {desc= "Move up" })
-vim.keymap.set("i", "<C-l>", "<Right>", {desc= "Move right" })
-vim.keymap.set("i", "<C-j>", "<Down>", {desc= "Move down" })
+vim.keymap.set("i", "<C-h>", "<Left>", { desc = "Move left" })
+vim.keymap.set("i", "<C-k>", "<Up>", { desc = "Move up" })
+vim.keymap.set("i", "<C-l>", "<Right>", { desc = "Move right" })
+vim.keymap.set("i", "<C-j>", "<Down>", { desc = "Move down" })
 --
 -- Use <Tab> to cycle through buffers in tab
 vim.keymap.set('n', '<Tab>', '<C-W>w');
