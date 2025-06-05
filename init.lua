@@ -827,7 +827,6 @@ require('lazy').setup({
       require('mini.tabline').setup()
       require('mini.bufremove').setup()
       require('mini.bracketed').setup()
-      require('mini.map').setup()
       -- Add/delete/replace surroundings (brackets, quotes, etc.)
       --
       -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
@@ -847,25 +846,6 @@ require('lazy').setup({
           suffix_next = 'n',        -- Suffix to search with "next" method
         },
       }
-      -- TODO: update mini map
-      -- require('mini.map').setup {
-      --   mappings = {
-      --     add = 'gs',               -- Add surrounding in Normal and Visual modes
-      --     delete = 'ds',            -- Delete surrounding
-      --     find = '<leader>ts',      -- Find surrounding (to the right)
-      --     find_left = '<leader>Ts', -- Find surrounding (to the left)
-      --     highlight = 'gh',         -- Highlight surrounding
-      --     replace = 'cs',           -- Replace surrounding
-      --     update_n_lines = 'gn',    -- Update `n_lines`
-
-      --     suffix_last = 'l',        -- Suffix to search with "prev" method
-      --     suffix_next = 'n',        -- Suffix to search with "next" method
-      --   },
-      -- }
-      -- vim.keymap.set('n', '<Leader>mc', Minimap.close)
-      -- vim.keymap.set('n', '<Leader>mf', Minimap.toggle_focus)
-      -- vim.keymap.set('n', '<Leader>mo', Minimap.open)
-      -- vim.keymap.set('n', '<Leader>mr', Minimap.refresh)
       -- Simple and easy statusline.
       --  You could remove this setup call if you don't like it,
       --  and try some other statusline plugin

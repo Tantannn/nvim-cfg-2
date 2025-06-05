@@ -14,20 +14,21 @@ return {
       vim.keymap.set({ 'n', 'x', 'o' }, 'S', '<Plug>(leap-backward)')
       vim.keymap.set({ 'n', 'x', 'o' }, 'gs', '<Plug>(leap-from-window)')
     end
-  }, 
+  },
   -- git
-  {'https://github.com/tpope/vim-fugitive',
+  {
+    'https://github.com/tpope/vim-fugitive',
     config = function()
       vim.keymap.set("n", "g<cr>", "<cmd>vertical Git<cr>")
       vim.keymap.set("n", "g<space>", ":Git ")
     end,
   },
-  {'sodapopcan/vim-twiggy'},
-  {'junegunn/gv.vim'},
-  {'tpope/vim-rhubarb'},
-    --switch true/false
-  {'andrewradev/switch.vim',
-    vim.keymap.set("n", "<A-s>", "<cmd>Switch<CR>" , { silent = true, desc = 'Switch True/False' })
+  { 'sodapopcan/vim-twiggy' },
+  { 'junegunn/gv.vim' },
+  { 'tpope/vim-rhubarb' },
+  --switch true/false
+  { 'andrewradev/switch.vim',
+    vim.keymap.set("n", "<A-s>", "<cmd>Switch<CR>", { silent = true, desc = 'Switch True/False' })
   },
   --persistance
   {
@@ -37,8 +38,9 @@ return {
   --terminal
   -- {'akinsho/toggleterm.nvim'},
   -- undo tree
-  {'mbbill/undotree',
-    config = function ()
+  {
+    'mbbill/undotree',
+    config = function()
       vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = 'ToggleUndoTree' })
       -- for windows
       vim.g.undotree_DiffCommand = "FC"
@@ -55,8 +57,8 @@ return {
       })
     end,
   },
-  -- multi line 
-  {'mg979/vim-visual-multi'},
+  -- multi line
+  { 'mg979/vim-visual-multi' },
   -- close tag
   -- {'alvan/vim-closetag'},
   {
@@ -65,7 +67,7 @@ return {
       require('nvim-ts-autotag').setup()
     end
   },
-    -- Swap
+  -- Swap
   -- {'mizlan/iswap.nvim'},
   -- {'Hoffs/omnisharp-extended-lsp.nvim',
   --   config = function()
@@ -84,12 +86,25 @@ return {
     "chrishrb/gx.nvim",
     keys = { { "gx", "<cmd>Browse<cr>", mode = { "n", "x" } } },
     cmd = { "Browse" },
-    init = function ()
-      vim.g.netrw_nogx = 1 -- disable netrw gx
+    init = function()
+      vim.g.netrw_nogx = 1                      -- disable netrw gx
     end,
     dependencies = { "nvim-lua/plenary.nvim" }, -- Required for Neovim < 0.10.0
-    config = true, -- default settings
-    submodules = false, -- not needed, submodules are required only for tests
+    config = true,                              -- default settings
+    submodules = false,                         -- not needed, submodules are required only for tests
   },
-  { "sindrets/diffview.nvim" }
+  { "sindrets/diffview.nvim" },
+  {
+    "petertriho/nvim-scrollbar",
+    config = function()
+      require("scrollbar").setup()
+
+      vim.cmd([[
+        augroup scrollbar_search_hide
+            autocmd!
+            autocmd CmdlineLeave : lua require('scrollbar.handlers.search').handler.hide()
+        augroup END
+    ]])
+    end,
+  }
 }
