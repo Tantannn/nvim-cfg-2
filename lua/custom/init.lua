@@ -98,7 +98,7 @@ return {
     "petertriho/nvim-scrollbar",
     config = function()
       require("scrollbar").setup()
-
+      require("scrollbar.handlers.gitsigns").setup()
       vim.cmd([[
         augroup scrollbar_search_hide
             autocmd!
