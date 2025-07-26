@@ -40,6 +40,9 @@ vim.keymap.set("i", "<C-j>", "<Down>", { desc = "Move down" })
 -- Use <Tab> to cycle through buffers in tab
 vim.keymap.set('n', '<Tab>', '<C-W>w');
 vim.keymap.set('n', '<S-Tab>', '<C-W>W');
+
+vim.o.tabstop = 2
+vim.o.shiftwidth = 2
 --
 -- -- Toggle Term
 -- nnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>

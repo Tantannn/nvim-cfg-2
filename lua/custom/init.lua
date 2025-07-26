@@ -142,7 +142,7 @@ return {
           -- Key bindings for managing completions in virtual text mode.
           key_bindings = {
             -- Accept the current completion.
-            accept = "<Tab>",
+            accept = "<C-g>",
             -- Accept the next word.
             accept_word = false,
             -- Accept the next line.
@@ -158,4 +158,17 @@ return {
       })
     end
   },
+  {
+    "alex-popov-tech/store.nvim",
+    dependencies = {
+      "OXY2DEV/markview.nvim", -- optional, for pretty readme preview / help window
+    },
+    cmd = "Store",
+    keys = {
+      { "<leader>sp", "<cmd>Store<cr>", desc = "Open Plugin Store" },
+    },
+    opts = {
+      -- optional configuration here
+    },
+  }
 }
