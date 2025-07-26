@@ -43,7 +43,7 @@ vim.keymap.set('n', '<S-Tab>', '<C-W>W');
 
 vim.o.tabstop = 2
 vim.o.shiftwidth = 2
---
+
 -- -- Toggle Term
 -- nnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
 -- inoremap <silent><c-t> <Esc><Cmd>exe v:count1 . "ToggleTerm"<CR>
