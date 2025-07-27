@@ -47,10 +47,10 @@ vim.o.shiftwidth = 2
 -- -- Toggle Term
 -- nnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
 -- inoremap <silent><c-t> <Esc><Cmd>exe v:count1 . "ToggleTerm"<CR>
--- vim.keymap.set('n', '<C-t>', ':ToggleTerm<CR>', {desc = "Toggle Term"});
+vim.keymap.set('n', '<leader>qt', ':ToggleTerm<CR>', {desc = "Toggle Term"});
 -- vim.keymap.set('i', '<C-t>', ':ToggleTerm<CR>', {desc = "Toggle Term"});
--- vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
--- vim.keymap.set('t', 'jk', [[<C-\><C-n>]], opts)
+vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
+vim.keymap.set('t', 'jk', [[<C-\><C-n>]], opts)
 -- vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], opts)
 -- vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]], opts)
 -- vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]], opts)
