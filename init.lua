@@ -859,7 +859,11 @@ require('lazy').setup({
       require('mini.tabline').setup()
       require('mini.bufremove').setup()
       require('mini.bracketed').setup()
-      require('mini.files').setup()
+
+      -- TODO: update bufremove
+      require('mini.bufremove').setup()
+
+      -- require('mini.files').setup()
       -- Add/delete/replace surroundings (brackets, quotes, etc.)
       --
       -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
@@ -880,15 +884,15 @@ require('lazy').setup({
         },
       }
 
-      MiniFiles = require('mini.files')
-      MiniFiles.open_in_current_dir = function()
-        local buf_path = vim.api.nvim_buf_get_name(0)
-        local dir = vim.fn.fnamemodify(buf_path, ':p:h')
-        MiniFiles.open(dir)
-      end
+      -- MiniFiles = require('mini.files')
+      -- MiniFiles.open_in_current_dir = function()
+      --   local buf_path = vim.api.nvim_buf_get_name(0)
+      --   local dir = vim.fn.fnamemodify(buf_path, ':p:h')
+      --   MiniFiles.open(dir)
+      -- end
 
       -- Keybinding
-      vim.keymap.set('n', '-', MiniFiles.open_in_current_dir, { desc = 'Open MiniFiles at file dir' })
+      -- vim.keymap.set('n', '-', MiniFiles.open_in_current_dir, { desc = 'Open MiniFiles at file dir' })
 
       -- Simple and easy statusline.
       --  You could remove this setup call if you don't like it,

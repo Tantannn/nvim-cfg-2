@@ -177,6 +177,35 @@ return {
       -- optional configuration here
     },
   },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim",
+      "nvim-tree/nvim-web-devicons", -- optional, but recommended
+    },
+    lazy = false,
+    config = function()
+      require("neo-tree").setup({
+        filesystem = {
+          follow_current_file = {
+            enabled = true, -- This will auto-expand the tree to the file's directory
+          },
+        },
+      })
+
+      -- Optional keymap to open Neo-tree at current file's directory
+      vim.keymap.set("n", "-", function()
+        require("neo-tree.command").execute({
+          action = "show",
+          source = "filesystem",
+          position = "left",
+          reveal = true,
+        })
+      end, { desc = "NeoTree Reveal Current File Dir" })
+    end,
+  }
   -- {
   --   "luukvbaal/statuscol.nvim", config = function()
   --     -- local builtin = require("statuscol.builtin")
