@@ -107,10 +107,10 @@ return {
       require("scrollbar.handlers.gitsigns").setup()
       vim.cmd([[
         augroup scrollbar_search_hide
-            autocmd!
-            autocmd CmdlineLeave : lua require('scrollbar.handlers.search').handler.hide()
+        autocmd!
+        autocmd CmdlineLeave : lua require('scrollbar.handlers.search').handler.hide()
         augroup END
-    ]])
+        ]])
     end,
   },
   {
@@ -197,13 +197,8 @@ return {
 
       -- Optional keymap to open Neo-tree at current file's directory
       vim.keymap.set("n", "-", function()
-        require("neo-tree.command").execute({
-          action = "show",
-          source = "filesystem",
-          position = "left",
-          reveal = true,
-        })
-      end, { desc = "NeoTree Reveal Current File Dir" })
+        vim.cmd("Neotree toggle")
+      end, { desc = "Toggle NeoTree" })
     end,
   }
   -- {
