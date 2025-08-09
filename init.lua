@@ -856,7 +856,7 @@ require('lazy').setup({
       --  - yinq - [Y]ank [I]nside [N]ext [']quote
       --  - ci'  - [C]hange [I]nside [']quote
       require('mini.ai').setup { n_lines = 500 }
-      require('mini.tabline').setup()
+      -- require('mini.tabline').setup()
       require('mini.bufremove').setup()
       require('mini.bracketed').setup()
 
