@@ -860,10 +860,7 @@ require('lazy').setup({
       require('mini.bufremove').setup()
       require('mini.bracketed').setup()
 
-      -- TODO: update bufremove
-      require('mini.bufremove').setup()
 
-      -- require('mini.files').setup()
       -- Add/delete/replace surroundings (brackets, quotes, etc.)
       --
       -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
