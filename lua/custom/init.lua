@@ -7,13 +7,16 @@ return {
   { 'xiyaowong/transparent.nvim' },
   -- leap search
   {
-    'ggandor/leap.nvim',
-    config = function()
-      require('leap').create_default_mappings()
-      vim.keymap.set({ 'n', 'x', 'o' }, 's', '<Plug>(leap-forward)')
-      vim.keymap.set({ 'n', 'x', 'o' }, 'S', '<Plug>(leap-backward)')
-      -- vim.keymap.set({ 'n', 'x', 'o' }, 'gs', '<Plug>(leap-from-window)')
-    end
+  'ggandor/leap.nvim',
+  config = function()
+    local leap = require('leap')
+
+    -- Don't call create_default_mappings() to avoid conflicts
+    -- Instead, define only the mappings you want:
+    vim.keymap.set({ 'n', 'x', 'o' }, 's', '<Plug>(leap-forward)')
+    vim.keymap.set({ 'n', 'x', 'o' }, 'S', '<Plug>(leap-backward)')
+    vim.keymap.set({ 'n', 'x', 'o' }, 'gS', '<Plug>(leap-from-window)')
+  end
   },
   -- git
   {
