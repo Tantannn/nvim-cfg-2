@@ -12,7 +12,7 @@ return {
       require('leap').create_default_mappings()
       vim.keymap.set({ 'n', 'x', 'o' }, 's', '<Plug>(leap-forward)')
       vim.keymap.set({ 'n', 'x', 'o' }, 'S', '<Plug>(leap-backward)')
-      vim.keymap.set({ 'n', 'x', 'o' }, 'gs', '<Plug>(leap-from-window)')
+      -- vim.keymap.set({ 'n', 'x', 'o' }, 'gs', '<Plug>(leap-from-window)')
     end
   },
   -- git
@@ -27,8 +27,21 @@ return {
   { 'junegunn/gv.vim' },
   { 'tpope/vim-rhubarb' },
   --switch true/false
-  { 'andrewradev/switch.vim',
-    vim.keymap.set("n", "<A-s>", "<cmd>Switch<CR>", { silent = true, desc = 'Switch True/False' })
+  {
+    'andrewradev/switch.vim',
+    init = function()
+      vim.g.switch_mapping = ''
+      vim.g.switch_custom_definitions = {
+      { 'true', 'false' },
+      { 'yes', 'no' },
+      { 'on', 'off' },
+      { 'enable', 'disable' },
+      { '0', '1' },
+    }
+    end,
+    config = function()
+      vim.keymap.set("n", "<A-s>", "<cmd>Switch<CR>", { silent = true, desc = 'Switch True/False' })
+    end,
   },
   --persistance
   {
@@ -171,7 +184,7 @@ return {
     },
     cmd = "Store",
     keys = {
-      { "<leader>sp", "<cmd>Store<cr>", desc = "Open Plugin Store" },
+      { "<leader>st", "<cmd>Store<cr>", desc = "Open Plugin Store" },
     },
     opts = {
       -- optional configuration here
@@ -200,7 +213,7 @@ return {
         vim.cmd("Neotree toggle")
       end, { desc = "Toggle NeoTree" })
     end,
-  }
+  },
   -- {
   --   "luukvbaal/statuscol.nvim", config = function()
   --     -- local builtin = require("statuscol.builtin")
@@ -222,4 +235,8 @@ return {
   --     })
   --   end,
   -- },
+  {
+  'AckslD/muren.nvim',
+  config = true,
+}
 }
