@@ -40,6 +40,7 @@ return {
         { 'on',     'off' },
         { 'enable', 'disable' },
         { '0',      '1' },
+        { 'left',   'right' },
       }
     end,
     config = function()
