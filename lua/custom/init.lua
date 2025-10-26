@@ -7,16 +7,16 @@ return {
   { 'xiyaowong/transparent.nvim' },
   -- leap search
   {
-  'ggandor/leap.nvim',
-  config = function()
-    local leap = require('leap')
+    'ggandor/leap.nvim',
+    config = function()
+      local leap = require('leap')
 
-    -- Don't call create_default_mappings() to avoid conflicts
-    -- Instead, define only the mappings you want:
-    vim.keymap.set({ 'n', 'x', 'o' }, 's', '<Plug>(leap-forward)')
-    vim.keymap.set({ 'n', 'x', 'o' }, 'S', '<Plug>(leap-backward)')
-    vim.keymap.set({ 'n', 'x', 'o' }, 'gS', '<Plug>(leap-from-window)')
-  end
+      -- Don't call create_default_mappings() to avoid conflicts
+      -- Instead, define only the mappings you want:
+      vim.keymap.set({ 'n', 'x', 'o' }, 's', '<Plug>(leap-forward)')
+      vim.keymap.set({ 'n', 'x', 'o' }, 'S', '<Plug>(leap-backward)')
+      vim.keymap.set({ 'n', 'x', 'o' }, 'gS', '<Plug>(leap-from-window)')
+    end
   },
   -- git
   {
@@ -35,12 +35,13 @@ return {
     init = function()
       vim.g.switch_mapping = ''
       vim.g.switch_custom_definitions = {
-      { 'true', 'false' },
-      { 'yes', 'no' },
-      { 'on', 'off' },
-      { 'enable', 'disable' },
-      { '0', '1' },
-    }
+        { 'true',   'false' },
+        { 'yes',    'no' },
+        { 'on',     'off' },
+        { 'enable', 'disable' },
+        { '0',      '1' },
+        { 'left',   'right' },
+      }
     end,
     config = function()
       vim.keymap.set("n", "<A-s>", "<cmd>Switch<CR>", { silent = true, desc = 'Switch True/False' })
