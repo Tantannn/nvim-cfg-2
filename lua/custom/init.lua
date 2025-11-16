@@ -41,6 +41,13 @@ return {
         { 'enable', 'disable' },
         { '0',      '1' },
         { 'left',   'right' },
+        { '&&',   '||' },
+        { '&',   '|' },
+        { 'up',   'down' },
+        { 'right',   'left' },
+        { '===',   '!==' },
+        { '==',   '!=' },
+        { 'and',   'or' },
       }
     end,
     config = function()
